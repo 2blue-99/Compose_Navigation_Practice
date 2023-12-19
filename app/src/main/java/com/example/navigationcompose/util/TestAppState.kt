@@ -32,10 +32,15 @@ class TestAppState(
     val navController: NavHostController
 ){
     fun navigateToTopLevelDestination(name: String) {
-        when(name){
-            "first" -> navController.navigateToFirst("first")
-            "second" -> navController.navigateToSecond("second")
-            "third" -> navController.navigateToThird("third")
+        Log.e("TAG", "navigateToTopLevelDestination: ${navController.currentDestination}")
+        Log.e("TAG", "name: ${name}")
+        if(navController.currentDestination?.route != name) {
+            navController.popBackStack()
+            when (name) {
+                "first" -> navController.navigateToFirst("first")
+                "second" -> navController.navigateToSecond("second")
+                "third" -> navController.navigateToThird("third")
+            }
         }
     }
 }

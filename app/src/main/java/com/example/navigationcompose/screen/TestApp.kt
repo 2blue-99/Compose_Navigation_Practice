@@ -40,9 +40,6 @@ fun TestApp(
         }
     ) { padding ->
         MyNavHost(appState = appState, modifier = Modifier.padding(padding))
-//        Row(modifier = Modifier.fillMaxSize().padding(padding)) {
-//            MyButton(text = "hahaha", onClick = {})
-//        }
     }
 }
 

@@ -27,35 +27,22 @@ fun MyNavHost(
     appState: TestAppState,
 ){
     val navController = appState.navController
-
     NavHost(
         navController = navController,
         startDestination = "first",
         modifier = modifier
     ){
-        firstScreen()
-        secondScreen()
-        thirdScreen()
+        firstScreen(onClick = {
+            navController.popBackStack()
+            navController.navigate("second")
+        })
+        secondScreen(onClick = {
+            navController.popBackStack()
+            navController.navigate("third")
+        })
+        thirdScreen(onClick = {
+            navController.popBackStack()
+            navController.navigate("first")
+        })
     }
 }
-
-//@Composable
-//fun ToFirst(
-//    navHostController: NavHostController
-//){
-//    navHostController.navigate("first")
-//}
-//
-//@Composable
-//fun ToSecond(
-//    navHostController: NavHostController
-//){
-//    navHostController.navigate("second")
-//}
-//
-//@Composable
-//fun ToThird(
-//    navHostController: NavHostController
-//){
-//    navHostController.navigate("third")
-//}

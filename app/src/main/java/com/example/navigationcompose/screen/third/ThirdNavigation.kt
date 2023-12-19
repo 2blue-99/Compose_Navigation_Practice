@@ -16,8 +16,8 @@ fun NavController.navigateToThird(name: String){
     this.navigate(name)
 }
 
-fun NavGraphBuilder.thirdScreen(){
+fun NavGraphBuilder.thirdScreen(onClick: () -> Unit){
     composable(route = "third"){
-        ThirdScreen()
+        ThirdScreen(onClick = {onClick()})
     }
 }

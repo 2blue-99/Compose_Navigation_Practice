@@ -16,7 +16,8 @@ import com.example.navigationcompose.component.MyButton
  */
 @Composable
 fun SecondScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
 ) {
     Column(
         modifier = Modifier.fillMaxSize().background(Color.Yellow),
@@ -25,7 +26,7 @@ fun SecondScreen(
     ) {
         MyButton(
             text = "To Third",
-            onClick = {}
+            onClick = {onClick()}
         )
     }
 }

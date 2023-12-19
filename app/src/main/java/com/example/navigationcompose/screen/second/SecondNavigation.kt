@@ -16,8 +16,8 @@ fun NavController.navigateToSecond(name: String){
     this.navigate(name)
 }
 
-fun NavGraphBuilder.secondScreen(){
+fun NavGraphBuilder.secondScreen(onClick:()-> Unit){
     composable(route = "second"){
-        SecondScreen()
+        SecondScreen(onClick= onClick)
     }
 }

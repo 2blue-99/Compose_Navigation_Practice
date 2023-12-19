@@ -14,8 +14,10 @@ fun NavController.navigateToFirst(name: String){
     this.navigate(name)
 }
 
-fun NavGraphBuilder.firstScreen(){
+fun NavGraphBuilder.firstScreen(onClick:()-> Unit){
     composable(route = "first"){
-        FirstScreen()
+        FirstScreen(onClick = {
+            onClick()
+        })
     }
 }
